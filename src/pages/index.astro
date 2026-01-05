@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Hero from "../components/sections/Hero.astro";
+import Projects from "../components/sections/Projects.astro";
+---
+
+<Layout>
+  <main class="relative min-h-screen overflow-hidden">
+    <div
+      class="pointer-events-none rounded-full absolute -top-[-800px] -left-[173px] h-[400px] w-[400px] bg-primary blur-[250px]"
+      aria-hidden="true"
+    >
+    </div>
+    <section id="hero" data-spy class="scroll-mt-24">
+      <Hero />
+    </section>
+    <section id="projects" data-spy class="scroll-mt-24">
+      <Projects />
+    </section>
+  </main>
+</Layout>
+
+<script is:inline>
+  const sections = Array.from(
+    document.querySelectorAll("section[data-spy][id]")
+  );
+
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  let currentId = null;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort(
+          (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0)
+        )[0];
+
+      if (!visible) return;
+
+      const id = visible.target.id;
+      if (!id || id === currentId) return;
+
+      currentId = id;
+
+      history.replaceState(null, "", `#${id}`);
+    },
+    {
+      root: null,
+      threshold: [0.6],
+    }
+  );
+
+  sections.forEach((s) => observer.observe(s));
+</script>

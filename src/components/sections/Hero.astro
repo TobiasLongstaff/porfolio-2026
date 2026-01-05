@@ -1,0 +1,33 @@
+---
+import Link from "../Link.astro";
+import { getCollection } from "astro:content";
+
+const profile = await getCollection("profile");
+---
+
+<div class="flex items-center justify-center min-h-screen">
+  <div class="flex justify-between w-[1600px]">
+    <div class="flex flex-col gap-[15px] w-[800px]">
+      <h3 class="font-bold text-4xl">{profile[0].data.name}</h3>
+      <h1 class="font-bold text-9xl tracking-[-2px] leading-[125px]">
+        <span class="text-primary">Front</span><span>end</span>
+        <br />
+        Development
+      </h1>
+      <p class="font-medium text-4xl text-text-secondary tracking-[-2px]">
+        {profile[0].body}
+      </p>
+    </div>
+    <div class="flex flex-col gap-[20px] justify-end">
+      <Link href={profile[0].data.social.github.url}>
+        {profile[0].data.social.github.label}
+      </Link>
+      <Link href={profile[0].data.social.linkedin.url}>
+        {profile[0].data.social.linkedin.label}
+      </Link>
+      <Link href={profile[0].data.social.instagram.url}>
+        {profile[0].data.social.instagram.label}
+      </Link>
+    </div>
+  </div>
+</div>
