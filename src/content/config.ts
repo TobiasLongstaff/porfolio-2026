@@ -33,6 +33,8 @@ const projects = defineCollection({
       message: 'Invalid date format',
     }),
     technologies: z.array(z.string()),
+    company: z.string(), // Nombre de la empresa
+    companySlug: z.string().optional(), // Slug de la empresa (se puede inferir de la carpeta)
   }),
 })
 

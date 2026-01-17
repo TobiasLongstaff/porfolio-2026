@@ -3,20 +3,26 @@ import Layout from "../layouts/Layout.astro";
 
 import Hero from "../components/sections/Hero.astro";
 import Projects from "../components/sections/Projects.astro";
+import Technologies from "../components/sections/Technologies.astro";
 ---
 
 <Layout>
   <main class="relative min-h-screen overflow-hidden">
-    <div
-      class="pointer-events-none rounded-full absolute -top-[-800px] -left-[173px] h-[400px] w-[400px] bg-primary blur-[250px]"
+    <div class="blur-[250px]">
+      <div
+      class="pointer-events-none rounded-full absolute -top-[-800px] -left-[173px] h-[400px] w-[400px] bg-primary"
       aria-hidden="true"
     >
+    </div>
     </div>
     <section id="hero" data-spy class="scroll-mt-24">
       <Hero />
     </section>
     <section id="projects" data-spy class="scroll-mt-24">
       <Projects />
+    </section>
+    <section id="technologies" data-spy class="scroll-mt-24">
+      <Technologies />
     </section>
   </main>
 </Layout>

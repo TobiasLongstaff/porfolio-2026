@@ -1,11 +1,21 @@
 ---
 import Link from "../Link.astro";
 import { getCollection } from "astro:content";
+import Squares from "../squares/Squares.jsx";
 
 const profile = await getCollection("profile");
 ---
 
-<div class="flex items-center justify-center min-h-screen">
+<div class="relative flex items-center justify-center min-h-screen">
+  <Squares 
+    client:load
+    direction="diagonal"
+    speed={0.2}
+    borderColor="#F1F5F9"
+    squareSize={60}
+    hoverFillColor="#222"
+    className="absolute inset-0 -z-10"
+  />
   <div class="flex justify-between w-[1600px]">
     <div class="flex flex-col gap-[15px] w-[800px]">
       <h3 class="font-bold text-4xl">{profile[0].data.name}</h3>

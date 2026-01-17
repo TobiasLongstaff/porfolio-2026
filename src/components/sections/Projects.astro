@@ -1,35 +1,22 @@
 ---
 import { getCollection } from "astro:content";
+import ProjectsFilter from "../ProjectsFilter.tsx";
 
 const projects = await getCollection("projects");
+
+// Obtener empresas únicas
+const companies = Array.from(new Set(projects.map(p => p.data.company)));
+const initialCompany = companies[0] || '';
 ---
 
-<div class="min-h-screen flex flex-col items-center justify-center gap-[25px]">
-  <h2 class="text-6xl font-bold">Mis {`{dev}`} proyectos</h2>
-  <div class="px-[10px] py-[12px] rounded-full shadow-soft bg-white">
-    <button
-      class="h-[60px] px-[20px] bg-secondary text-primary font-medium text-2xl rounded-full"
-      >Indicum Technology</button
-    >
-  </div>
-  <div
-    class="w-[1490px] h-[600px] bg-background-alt rounded-[40px] flex items-center justify-between px-[40px]"
-  >
-    <div class="flex flex-col gap-[15px] w-[800px]">
-      <p class="font-bold text-4xl">{projects[0].data.title}</p>
-      <p class="font-medium text-2xl text-text-secondary">
-        {projects[0].body}
-      </p>
-      <div class="flex gap-[10px]">
-        {
-          projects[0].data.technologies.map((tech) => (
-            <span class="font-medium text-base rounded-full border px-[15px] py-[5px]">
-              {tech}
-            </span>
-          ))
-        }
-      </div>
-    </div>
-    <img src="/images/indicum-logo.png" alt="Indicum Technology Logo" />
+<div class="min-h-screen flex flex-col items-center justify-center">
+  <div class="w-full flex flex-col items-center justify-center gap-[25px]">
+    <h2 class="text-6xl font-bold">Mis {`{dev}`} proyectos</h2>
+    <ProjectsFilter 
+      client:load 
+      projects={projects} 
+      companies={companies}
+      initialCompany={initialCompany}
+    />
   </div>
 </div>
