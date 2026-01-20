@@ -1,6 +1,6 @@
 ---
-title: "Business Integrations"
-image: "/projects/business-integrations/preview.png"
+title: "GP Connect"
+image: "/projects/gp-connect/preview.png"
 date: "2023-10-15"
 technologies: ["React", "TypeScript", "Laravel", "My SQL"]
 company: "Indicum Technology"

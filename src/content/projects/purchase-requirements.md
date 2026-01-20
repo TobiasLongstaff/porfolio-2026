@@ -1,8 +1,8 @@
 ---
-title: "Business Integrations"
-image: "/projects/business-integrations/preview.png"
+title: "RQ Compras"
+image: "/projects/purchase-requirements/preview.png"
 date: "2023-10-15"
-technologies: ["React", "TypeScript", "Laravel", "My SQL"]
+technologies: ["React", "PHP", "My SQL"]
 company: "Indicum Technology"
 companySlug: "indicum-technology"
 ---

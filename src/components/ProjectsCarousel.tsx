@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, AnimatePresence, type MotionValue, type Transition } from 'motion/react';
 import type { CollectionEntry } from 'astro:content';
+import { getTechIcon } from '../lib/techIcons';
 
 const DRAG_BUFFER = 0;
 const VELOCITY_THRESHOLD = 500;
@@ -37,14 +38,18 @@ function ProjectCarouselItem({ project, index, itemWidth, trackItemOffset, x, tr
           {project.body || ''}
         </p>
         <div className="flex gap-[10px] flex-wrap">
-          {project.data.technologies && project.data.technologies.map((tech: string, techIndex: number) => (
-            <span
-              key={techIndex}
-              className="font-medium text-base rounded-full border px-[15px] py-[5px]"
-            >
-              {tech}
-            </span>
-          ))}
+          {project.data.technologies && project.data.technologies.map((tech: string, techIndex: number) => {
+            const TechIcon = getTechIcon(tech);
+            return (
+              <span
+                key={techIndex}
+                className="font-medium text-base rounded-full border px-[15px] py-[5px] flex items-center gap-[8px]"
+              >
+                {TechIcon && <TechIcon className="w-5 h-5" />}
+                {tech}
+              </span>
+            );
+          })}
         </div>
       </div>
       {project.data.image && (
@@ -223,21 +228,6 @@ export default function ProjectsCarousel({ items = [], slideDirection = 'right' 
         ))}
         </motion.div>
       </AnimatePresence>
-      <div className="w-full flex justify-center pb-4">
-        <div className="flex w-[150px] mt-[16px] justify-between px-[32px]">
-          {items.map((_, index) => (
-            <motion.div
-              key={index}
-              className={`h-[8px] w-[8px] rounded-full cursor-pointer transition-all duration-150 ${activeIndex === index ? 'bg-gray-500' : 'bg-primary'}`}
-              animate={{
-                scale: activeIndex === index ? 1.2 : 1
-              }}
-              onClick={() => setPosition(index + 1)}
-              transition={{ duration: 0.15 }}
-            />
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

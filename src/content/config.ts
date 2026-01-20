@@ -38,7 +38,26 @@ const projects = defineCollection({
   }),
 })
 
+const experience = defineCollection({
+  type: 'content',
+  schema: z.object({
+    company: z.string(),
+    position: z.string(),
+    startDate: z.string().refine((date) => !isNaN(Date.parse(date)), {
+      message: 'Invalid date format',
+    }),
+    endDate: z.string().optional().refine((date) => {
+      if (!date) return true; // endDate es opcional
+      return !isNaN(Date.parse(date));
+    }, {
+      message: 'Invalid date format',
+    }),
+    technologies: z.array(z.string()).optional(),
+  }),
+})
+
 export const collections = {
   profile,
-  projects
+  projects,
+  experience
 }

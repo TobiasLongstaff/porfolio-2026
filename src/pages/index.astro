@@ -4,10 +4,11 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/sections/Hero.astro";
 import Projects from "../components/sections/Projects.astro";
 import Technologies from "../components/sections/Technologies.astro";
+import Experience from "../components/sections/Experience.astro";
 ---
 
 <Layout>
-  <main class="relative min-h-screen overflow-hidden">
+  <main class="relative min-h-screen overflow-x-hidden">
     <div class="blur-[250px]">
       <div
       class="pointer-events-none rounded-full absolute -top-[-800px] -left-[173px] h-[400px] w-[400px] bg-primary"
@@ -20,6 +21,9 @@ import Technologies from "../components/sections/Technologies.astro";
     </section>
     <section id="projects" data-spy class="scroll-mt-24">
       <Projects />
+    </section>
+    <section id="experience" data-spy class="scroll-mt-24 overflow-visible">
+      <Experience />
     </section>
     <section id="technologies" data-spy class="scroll-mt-24">
       <Technologies />

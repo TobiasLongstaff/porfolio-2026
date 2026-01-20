@@ -1,8 +1,8 @@
 ---
-title: "Business Integrations"
-image: "/projects/business-integrations/preview.png"
+title: "Gestión de Pedidos y Reclamos"
+image: "/projects/orders-management/preview.png"
 date: "2023-10-15"
-technologies: ["React", "TypeScript", "Laravel", "My SQL"]
+technologies: ["JavaScript", "jQuery", "PHP", "My SQL"]
 company: "Indicum Technology"
 companySlug: "indicum-technology"
 ---
