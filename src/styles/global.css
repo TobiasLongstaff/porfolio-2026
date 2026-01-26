@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   /* --background: 217 217 217; */
@@ -9,6 +10,9 @@
   --font-default: 47 46 51;
   --font-secondary: 133 135 139;
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+  --timeline-gradient: linear-gradient(267deg,rgba(0, 0, 140, 1) 0%, rgba(0, 183, 255, 1) 100%);
+  --timeline-gradient-alt: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
 }
 
 @font-face {
@@ -33,6 +37,9 @@
   
   
   --shadow-soft: var(--shadow);
+
+  --gradient-timeline: var(--timeline-gradient);
+  --gradient-timeline-alt: var(--timeline-gradient-alt);
 }
 
 

@@ -47,7 +47,7 @@ const experience = defineCollection({
       message: 'Invalid date format',
     }),
     endDate: z.string().optional().refine((date) => {
-      if (!date) return true; // endDate es opcional
+      if (!date) return true;
       return !isNaN(Date.parse(date));
     }, {
       message: 'Invalid date format',
