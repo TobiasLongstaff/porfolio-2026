@@ -1,0 +1,90 @@
+---
+import ContactForm from "../ContactForm.tsx";
+import DownloadCVButton from "../DownloadCVButton.tsx";
+---
+
+<div
+  class="relative min-h-screen w-full flex flex-col items-center justify-center gap-[25px] p-4 md:p-8 overflow-hidden"
+>
+  <!-- Efecto de ruido -->
+  <div
+    class="absolute inset-0 pointer-events-none opacity-[0.25] mix-blend-overlay"
+    style="
+      background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E');
+      background-size: 250px 250px;
+      background-repeat: repeat;
+    "
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Círculos difuminados de fondo -->
+  <div
+    class="absolute inset-0 pointer-events-none overflow-hidden blur-[100px]"
+  >
+    <!-- Círculo superior izquierdo -->
+    <div
+      class="rounded-full absolute top-[-300px] left-[-300px] h-[700px] w-[700px] bg-primary animate-float"
+      style="animation-duration: 15s; animation-delay: 0s;"
+      aria-hidden="true"
+    >
+    </div>
+    <!-- Círculo inferior derecho -->
+    <div
+      class="rounded-full absolute bottom-[-300px] right-[-300px] h-[700px] w-[700px] bg-primary animate-float"
+      style="animation-duration: 18s; animation-delay: 2s;"
+      aria-hidden="true"
+    >
+    </div>
+  </div>
+
+  <style>
+    @keyframes float {
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+      25% {
+        transform: translate(100px, -80px) scale(1.1);
+      }
+      50% {
+        transform: translate(-80px, 100px) scale(0.9);
+      }
+      75% {
+        transform: translate(80px, 120px) scale(1.05);
+      }
+    }
+    .animate-float {
+      animation: float 15s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Contenido -->
+  <div
+    class="relative w-full max-w-6xl rounded-3xl p-5 shadow-xl border border-gray-200 bg-background/40"
+  >
+    <div class="grid md:grid-cols-2">
+      <div class="flex flex-col py-6 px-10 justify-between space-y-6">
+        <div>
+          <button
+            class="px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-text mb-6"
+          >
+            Contact
+          </button>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-text">
+            ¿Tenés una oportunidad o proyecto en mente?
+          </h2>
+          <p class="text-lg text-text-secondary leading-relaxed mb-8">
+            Podés escribirme a través del formulario y me pondré en contacto a
+            la brevedad.
+          </p>
+        </div>
+        <DownloadCVButton client:load />
+      </div>
+      <div class="rounded-2xl p-6 md:p-8 border border-gray-200 bg-background">
+        <h3 class="text-2xl font-bold mb-6 text-text">Contactar</h3>
+        <ContactForm client:load />
+      </div>
+    </div>
+  </div>
+</div>

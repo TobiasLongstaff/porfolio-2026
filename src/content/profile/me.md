@@ -1,9 +1,10 @@
 ---
 name: "Tobias Longstaff"
-role: "Frontend
-Development"
+role: "Frontend Development"
 email: "tobias@email.com"
-avatar: "/images/avatar.jpg"
+avatar: "./src/assets/images/avatar.png"
+country: "Argentina"
+city: "Buenos Aires"
 social:
   github: {
     url: "https://github.com/...",

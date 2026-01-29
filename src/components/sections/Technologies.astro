@@ -1,7 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import TechnologiesBento from "../TechnologiesBento";
 
-<div class="min-h-screen flex flex-col items-center justify-center gap-[25px]">
-  <h2 class="text-6xl font-bold">Tecnologías</h2>
-  <span class="text-2xl font-medium">Font-End</span>
-  <span>Javascript</span>
-  <span>Desarrollo de funcionalidades complejas en entornos web</span>
+const technologies = await getCollection("technologies");
+---
+
+<div class="min-h-screen w-full flex flex-col items-center justify-center gap-[25px] p-4 md:p-8">
+  <h2 class="text-4xl md:text-6xl font-bold mb-4">Tecnologías</h2>
+  <div class="w-full h-full flex-1 max-w-full">
+    <TechnologiesBento
+    technologies={technologies}
+    textAutoHide={true}
+    enableStars={false}
+    enableSpotlight
+    enableBorderGlow={true}
+    enableTilt={false}
+    enableMagnetism={false}
+    clickEffect={false}
+    spotlightRadius={460}
+    particleCount={12}
+    glowColor="46, 27, 250"
+    disableAnimations={false}
+    client:visible
+  />
+  </div>
 </div>

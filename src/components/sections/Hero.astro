@@ -1,13 +1,14 @@
 ---
-import Link from "../Link.astro";
 import { getCollection } from "astro:content";
 import Squares from "../squares/Squares.jsx";
+import SocialButtons from "../SocialButtons.tsx";
+import LocationBadge from "../LocationBadge.tsx";
 
 const profile = await getCollection("profile");
 ---
 
 <div class="relative flex items-center justify-center min-h-screen">
-  <Squares 
+  <Squares
     client:load
     direction="diagonal"
     speed={0.2}
@@ -22,22 +23,24 @@ const profile = await getCollection("profile");
       <h1 class="font-bold text-9xl tracking-[-2px] leading-[125px]">
         <span class="text-primary">Front</span><span>end</span>
         <br />
-        Development
+        Development.
       </h1>
-      <p class="font-medium text-4xl text-text-secondary tracking-[-2px]">
+      <p class="text-2xl text-text-secondary">
         {profile[0].body}
       </p>
+      <LocationBadge
+        client:load
+        country={profile[0].data.country}
+        city={profile[0].data.city}
+      />
     </div>
-    <div class="flex flex-col gap-[20px] justify-end">
-      <Link href={profile[0].data.social.github.url}>
-        {profile[0].data.social.github.label}
-      </Link>
-      <Link href={profile[0].data.social.linkedin.url}>
-        {profile[0].data.social.linkedin.label}
-      </Link>
-      <Link href={profile[0].data.social.instagram.url}>
-        {profile[0].data.social.instagram.label}
-      </Link>
+    <img
+      src={profile[0].data.avatar}
+      alt={profile[0].data.name}
+      class="h-[400px]"
+    />
+    <div class="flex flex-col justify-end">
+      <SocialButtons client:load social={profile[0].data.social} />
     </div>
   </div>
 </div>

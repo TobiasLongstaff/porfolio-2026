@@ -5,6 +5,7 @@ import Hero from "../components/sections/Hero.astro";
 import Projects from "../components/sections/Projects.astro";
 import Technologies from "../components/sections/Technologies.astro";
 import Experience from "../components/sections/Experience.astro";
+import Contact from "../components/sections/Contact.astro";
 ---
 
 <Layout>
@@ -28,43 +29,9 @@ import Experience from "../components/sections/Experience.astro";
     <section id="technologies" data-spy class="scroll-mt-24">
       <Technologies />
     </section>
+    <section id="contact" data-spy class="scroll-mt-24">
+      <Contact />
+    </section>
   </main>
 </Layout>
 
-<script is:inline>
-  const sections = Array.from(
-    document.querySelectorAll("section[data-spy][id]")
-  );
-
-  if (location.hash) {
-    const el = document.querySelector(location.hash);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  let currentId = null;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((e) => e.isIntersecting)
-        .sort(
-          (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0)
-        )[0];
-
-      if (!visible) return;
-
-      const id = visible.target.id;
-      if (!id || id === currentId) return;
-
-      currentId = id;
-
-      history.replaceState(null, "", `#${id}`);
-    },
-    {
-      root: null,
-      threshold: [0.6],
-    }
-  );
-
-  sections.forEach((s) => observer.observe(s));
-</script>

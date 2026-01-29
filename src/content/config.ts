@@ -7,6 +7,8 @@ const profile = defineCollection({
     role: z.string(),
     email: z.string().email(),
     avatar: z.string(),
+    country: z.string(),
+    city: z.string(),
     social: z.object({
       github: z.object({
         url: z.string().url(),
@@ -56,8 +58,21 @@ const experience = defineCollection({
   }),
 })
 
+const technologies = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    category: z.string(),
+    icon: z.string().optional(), // Nombre del icono si está disponible (para tarjetas simples)
+    technologies: z.array(z.string()).optional(), // Array de nombres de tecnologías (para tarjetas con múltiples iconos)
+    image: z.string().optional(), // Ruta de imagen para mostrar en la tarjeta
+    order: z.number().optional(), // Orden de aparición (menor número = primero)
+  }),
+})
+
 export const collections = {
   profile,
   projects,
-  experience
+  experience,
+  technologies
 }
