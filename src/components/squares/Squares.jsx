@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import './Squares.css';
 
-const Squares = ({
+export const Squares = ({
   direction = 'right',
   speed = 1,
   borderColor = '#999',
@@ -135,5 +135,3 @@ const Squares = ({
 
   return <canvas ref={canvasRef} className={`squares-canvas ${className}`}></canvas>;
 };
-
-export default Squares;

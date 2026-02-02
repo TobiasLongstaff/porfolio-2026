@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiDownload } from 'react-icons/fi';
-import PrimaryButton from './PrimaryButton';
+import PrimaryButton from './primary-button';
 
 export default function DownloadCVButton() {
   const handleDownload = () => {

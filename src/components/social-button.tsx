@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import PrimaryButton from './PrimaryButton';
+import PrimaryButton from './primary-button';
 import type { IconType } from 'react-icons';
 
 interface SocialButtonProps {

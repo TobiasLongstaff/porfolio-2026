@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import Squares from "../squares/Squares.jsx";
-import SocialButtons from "../SocialButtons.tsx";
-import LocationBadge from "../LocationBadge.tsx";
+import { Squares } from "../squares";
+import SocialButtons from "../social-buttons.tsx";
+import LocationBadge from "../location-badge.tsx";
 
 const profile = await getCollection("profile");
 ---

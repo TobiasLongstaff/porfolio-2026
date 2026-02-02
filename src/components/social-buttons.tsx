@@ -1,5 +1,4 @@
-import React from 'react';
-import SocialButton from './SocialButton';
+import SocialButton from './social-button';
 
 interface SocialLink {
   url: string;

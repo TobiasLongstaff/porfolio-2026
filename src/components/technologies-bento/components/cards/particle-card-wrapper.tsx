@@ -2,8 +2,8 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import type { IconType } from 'react-icons';
 import type { CardData } from '../../types';
-import { ParticleCard } from '../ParticleCard';
-import { CodeEditorPreview } from '../CodeEditorPreview';
+import { ParticleCard } from '../particle-card';
+import { CodeEditorPreview } from '../code-editor-preview';
 
 interface ParticleCardWrapperProps {
   card: CardData;

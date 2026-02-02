@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { useTypewriter } from '../hooks/useTypewriter';
+import { useTypewriter } from '../hooks/use-typewriter';
 
 export const CodeEditorPreview: React.FC = () => {
   const cursorRef = useRef<HTMLSpanElement>(null);

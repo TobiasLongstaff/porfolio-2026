@@ -1,7 +1,7 @@
 import { useState, useMemo, useRef } from 'react';
 import type { CollectionEntry } from 'astro:content';
-import ProjectsTabs from './ProjectsTabs.tsx';
-import ProjectsCarousel from './ProjectsCarousel.tsx';
+import ProjectsTabs from './projects-tabs.tsx';
+import ProjectsCarousel from './projects-carousel.tsx';
 
 interface ProjectsFilterProps {
   projects: CollectionEntry<"projects">[];

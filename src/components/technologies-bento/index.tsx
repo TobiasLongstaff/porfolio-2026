@@ -1,14 +1,14 @@
 import React, { useRef, useMemo } from 'react';
 import type { BentoProps, CardData } from './types';
 import { DEFAULT_PARTICLE_COUNT, DEFAULT_SPOTLIGHT_RADIUS, DEFAULT_GLOW_COLOR } from './constants';
-import { useMobileDetection } from './hooks/useMobileDetection';
+import { useMobileDetection } from './hooks/use-mobile-detection';
 import { getTechIcon, getTechColor } from '@/lib/techIcons';
-import { GlobalSpotlight } from './components/GlobalSpotlight';
-import { BentoCardGrid } from './components/BentoCardGrid';
-import { ParticleCardWrapper } from './components/cards/ParticleCardWrapper';
-import { TestingQualityCard } from './components/cards/TestingQualityCard';
-import { TechnologiesGridCard } from './components/cards/TechnologiesGridCard';
-import { DefaultCard } from './components/cards/DefaultCard';
+import { GlobalSpotlight } from './components/global-spotlight';
+import { BentoCardGrid } from './components/bento-card-grid';
+import { ParticleCardWrapper } from './components/cards/particle-card-wrapper';
+import { TestingQualityCard } from './components/cards/testing-quality-card';
+import { TechnologiesGridCard } from './components/cards/technologies-grid-card';
+import { DefaultCard } from './components/cards/default-card';
 
 const MagicBento: React.FC<BentoProps> = ({
   technologies = [],

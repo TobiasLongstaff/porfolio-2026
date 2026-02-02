@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import ReactMarkdown from 'react-markdown';
 import type { IconType } from 'react-icons';
 import type { CardData } from '../../types';
-import { CodeEditorPreview } from '../CodeEditorPreview';
+import { CodeEditorPreview } from '../code-editor-preview';
 
 interface DefaultCardProps {
   card: CardData;

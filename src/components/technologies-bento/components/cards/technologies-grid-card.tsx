@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import ReactMarkdown from 'react-markdown';
 import type { CardData } from '../../types';
 import { getTechColor } from '@/lib/techIcons';
-import { CodeEditorPreview } from '../CodeEditorPreview';
+import { CodeEditorPreview } from '../code-editor-preview';
 
 interface TechnologiesGridCardProps {
   card: CardData;
