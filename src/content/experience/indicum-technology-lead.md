@@ -3,12 +3,28 @@ company: "Indicum Technology"
 position: "Líder Técnico"
 startDate: "2023-08"
 technologies: ["React", "TypeScript", "Laravel", "My SQL", "JavaScript"]
+milestones: [
+  {
+    title: "Liderazgo técnico de equipos de desarrollo",
+    description: "Estuve a cargo de un equipo de tres desarrolladores trabajando junto a un Project Manager en el mantenimiento evolutivo de sistemas existentes y en nuevos proyectos."
+  },
+  {
+    title: "Definición de arquitecturas y decisiones técnicas",
+    description: "Tomé decisiones técnicas clave, definí arquitecturas, realicé revisión de código y aseguré la calidad de las entregas en cada proyecto."
+  },
+  {
+    title: "Optimización de procesos y automatización de tareas",
+    description: "Trabajé en agilizar los procesos de trabajo y automatizar tareas para mejorar la eficiencia del equipo y los despliegues."
+  },
+  {
+    title: "Capacitación del equipo y acompañamiento técnico",
+    description: "Capacité y acompañé a desarrolladores, promoviendo buenas prácticas y mejora continua dentro del equipo."
+  },
+  {
+    title: "Participación activa en UX/UI y definición de producto",
+    description: "Colaboré en el diseño de la experiencia de usuario y la definición de flujos e interfaces, aportando visión técnica y de producto."
+  }
+]
 ---
 
-Luego de participar activamente en múltiples desarrollos, asumí el rol de Líder Técnico, enfocándome en la gestión técnica de los productos y en el liderazgo del equipo de desarrollo.
-
-Estuve a cargo de un **equipo de tres desarrolladores**, trabajando en conjunto con un **Project Manager** tanto en el mantenimiento evolutivo de los sistemas existentes como en el desarrollo de nuevos proyectos. Mi rol incluyó la **toma de decisiones técnicas**, definición de arquitecturas, revisión de código y aseguramiento de la calidad de las entregas.
-
-Además, tuve como objetivo **capacitar al equipo**, optimizar y **agilizar los procesos de trabajo**, y **automatizar tareas** para mejorar la eficiencia del desarrollo y los despliegues. También participé activamente en el **diseño del producto y la experiencia de usuario (UX/UI)**, colaborando en la definición completa de los flujos y la interfaz de las soluciones.
-
-Este rol consolidó mi perfil como referente técnico, combinando liderazgo, visión de producto y ejecución técnica.
+Indicum Technology es una empresa dedicada al desarrollo de soluciones digitales a medida para distintos clientes, enfocada en la creación y mantenimiento de sistemas orientados a resolver problemáticas reales de negocio.

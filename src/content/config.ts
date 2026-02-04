@@ -55,6 +55,10 @@ const experience = defineCollection({
       message: 'Invalid date format',
     }),
     technologies: z.array(z.string()).optional(),
+    milestones: z.array(z.object({
+      title: z.string(),
+      description: z.string(),
+    })),
   }),
 })
 
@@ -70,9 +74,17 @@ const technologies = defineCollection({
   }),
 })
 
+const experienceTitle = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+  }),
+})
+
 export const collections = {
   profile,
   projects,
   experience,
-  technologies
+  technologies,
+  experienceTitle
 }

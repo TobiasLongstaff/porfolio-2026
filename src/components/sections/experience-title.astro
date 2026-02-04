@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import { ExperienceTitle } from "../experience-title.tsx";
+
+const experienceTitleData = await getCollection("experience-title");
+const titleData = experienceTitleData[0];
+---
+
+{
+  titleData ? (
+    <ExperienceTitle 
+      title={titleData.data.title} 
+      description={titleData.body}
+      client:load 
+    />
+  ) : null
+}

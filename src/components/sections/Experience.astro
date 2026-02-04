@@ -1,18 +1,16 @@
 ---
 import { getCollection } from "astro:content";
-import PinnedCareerTimeline from "../pinned-career-timeline.tsx";
+import PinnedCareerTimeline from "../pinned-career-timeline";
 
 const experiences = await getCollection("experience");
 ---
 
-<div
-  class="min-h-screen"
->
-  {
-    experiences.length > 0 ? (
-      <PinnedCareerTimeline experiences={experiences} client:visible />
-    ) : (
+{
+  experiences.length > 0 ? (
+    <PinnedCareerTimeline experiences={experiences} client:visible />
+  ) : (
+    <div class="min-h-screen flex items-center justify-center">
       <p class="text-text-secondary text-xl">No hay experiencias disponibles</p>
-    )
-  }
-</div>
+    </div>
+  )
+}

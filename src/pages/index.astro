@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Hero from "../components/sections/Hero.astro";
-import Projects from "../components/sections/Projects.astro";
-import Technologies from "../components/sections/Technologies.astro";
-import Experience from "../components/sections/Experience.astro";
-import Contact from "../components/sections/Contact.astro";
+import Hero from "../components/sections/hero.astro";
+import Projects from "../components/sections/projects.astro";
+import Technologies from "../components/sections/technologies.astro";
+import ExperienceTitle from "../components/sections/experience-title.astro";
+import Experience from "../components/sections/experience.astro";
+import Contact from "../components/sections/contact.astro";
 ---
 
 <Layout>
@@ -22,6 +23,9 @@ import Contact from "../components/sections/Contact.astro";
     </section>
     <section id="projects" data-spy class="scroll-mt-24">
       <Projects />
+    </section>
+    <section id="experience-title" data-spy class="scroll-mt-24">
+      <ExperienceTitle />
     </section>
     <section id="experience" data-spy class="scroll-mt-24 overflow-visible">
       <Experience />

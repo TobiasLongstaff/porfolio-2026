@@ -4,13 +4,24 @@ position: "Desarrollador Frontend Junior"
 startDate: "2022-07"
 endDate: "2022-10"
 technologies: ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tanstack Query", "React Router", "React Hook Form", "Prime React", "Redux"]
+milestones: [
+  {
+    title: "Desarrollo y mantenimiento de aplicaciones en producción",
+    description: "Participé en el desarrollo y mejora de aplicaciones web utilizadas por clientes de gran escala, incorporando nuevas funcionalidades y optimizando módulos existentes en sistemas activos."
+  },
+  {
+    title: "Construcción del backoffice administrativo de Minigios",
+    description: "Desarrollé el backoffice completo de la aplicación, creando interfaces orientadas a la gestión interna y mejorando la experiencia de uso para equipos administrativos."
+  },
+  {
+    title: "Mantenimiento evolutivo en la Academia del Banco Santander",
+    description: "Trabajé sobre una base de código ya establecida realizando corrección de errores y pequeñas mejoras funcionales en un sistema en producción."
+  },
+  {
+    title: "Trabajo en equipo y adaptación a entornos profesionales",
+    description: "Consolidé mis bases en desarrollo frontend adaptándome a dinámicas de trabajo colaborativo, estándares de código y procesos profesionales."
+  }
+]
 ---
 
-
-Formé parte del equipo frontend trabajando en el desarrollo y mantenimiento de aplicaciones web para clientes de gran escala. Participé en dos proyectos principales, aportando tanto en nuevas funcionalidades como en mejoras sobre productos existentes.
-
-En **Minigios**, desarrollé el **backoffice de administración** de la aplicación, creando interfaces orientadas a la gestión interna y optimizando la experiencia de uso para equipos administrativos.
-
-También colaboré en la **Academia del Banco Santander**, donde realicé tareas de mantenimiento, corrección de errores y pequeñas mejoras funcionales, trabajando sobre una base de código ya establecida y en producción.
-
-Esta experiencia me permitió consolidar mis bases en desarrollo frontend, trabajar en entornos reales y adaptarme a dinámicas de equipo y estándares profesionales.
+Magnético es una empresa orientada al desarrollo de soluciones digitales para clientes de gran escala, trabajando en productos web que requieren mantenimiento continuo, evolución funcional y altos estándares de calidad en producción.

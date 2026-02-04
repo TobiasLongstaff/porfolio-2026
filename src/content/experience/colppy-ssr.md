@@ -4,10 +4,24 @@ position: "Desarrollador Frontend Semi Senior"
 startDate: "2023-06"
 endDate: "2023-12"
 technologies: ["React", "TypeScript"]
+milestones: [
+  {
+    title: "Mejora visual y evolución del producto",
+    description: "Trabajé en la mejora visual del sistema de facturación y contabilidad, desarrollando nuevas funcionalidades y corrigiendo bugs sobre un producto en producción."
+  },
+  {
+    title: "Participación en el rebranding completo de la plataforma",
+    description: "Formé parte activa del rediseño visual de todos los módulos del sistema, adaptando la interfaz a una nueva identidad sin afectar la estabilidad del producto."
+  },
+  {
+    title: "Modernización de secciones legacy",
+    description: "Reconstruí y modernicé múltiples partes del sistema, mejorando la experiencia de usuario sobre una base de código extensa y antigua."
+  },
+  {
+    title: "Consistencia visual y usabilidad en sistemas complejos",
+    description: "Priorizé la coherencia visual, la usabilidad y la calidad en cada entrega dentro de un sistema de alta complejidad."
+  }
+]
 ---
 
-Ingresé a Colppy como desarrollador frontend enfocado en la **mejora visual del producto**, corrección de bugs y desarrollo de nuevas funcionalidades dentro del sistema de **facturación y contabilidad**.
-
-Durante esta etapa participé activamente en el **proceso de rebranding completo de la plataforma**, trabajando en el **rediseño visual de todos los módulos** del sistema. Debido a la antigüedad del producto, fue necesario **reconstruir y modernizar múltiples secciones**, adaptando interfaces existentes a una nueva identidad visual y mejorando la experiencia de usuario sin afectar la estabilidad del sistema.
-
-Este trabajo implicó colaborar sobre una base de código extensa, priorizando consistencia visual, usabilidad y calidad en cada entrega.
+Colppy es una plataforma de gestión contable y administrativa para PyMEs, enfocada en simplificar procesos de facturación, contabilidad y administración a través de soluciones digitales.
