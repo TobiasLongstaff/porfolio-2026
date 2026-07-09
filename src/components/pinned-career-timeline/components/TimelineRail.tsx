@@ -6,11 +6,11 @@ import type { EnrichedExperience } from "../types"
 interface TimelineRailProps {
   experiences: EnrichedExperience[]
   group: "indicum" | "rest"
-  fillRef: React.RefObject<HTMLDivElement>
-  railRef: React.RefObject<HTMLDivElement>
+  fillRef: React.RefObject<HTMLDivElement | null>
+  railRef: React.RefObject<HTMLDivElement | null>
   restStartPosition?: number
   restEndMaxPosition?: number
-  restEndCapRef?: React.RefObject<HTMLDivElement>
+  restEndCapRef?: React.RefObject<HTMLDivElement | null>
 }
 
 export const TimelineRail: React.FC<TimelineRailProps> = ({

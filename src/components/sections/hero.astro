@@ -5,9 +5,13 @@ import SocialButtons from "../social-buttons.tsx";
 import LocationBadge from "../location-badge.tsx";
 
 const profile = await getCollection("profile");
+const currentProfile = profile[0];
+const initials = currentProfile.data.name
+  .split(" ")
+  .map((part) => part[0])
+  .join("")
+  .slice(0, 2);
 
-// SVG de ruido codificado
-const noiseSvg = `data:image/svg+xml,${encodeURIComponent(`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#noiseFilter)"/></svg>`)}`;
 ---
 
 <div class="m-5 mt-0 bg-white rounded-b-3xl">
@@ -17,7 +21,7 @@ const noiseSvg = `data:image/svg+xml,${encodeURIComponent(`<svg viewBox="0 0 400
   >
     <!-- Squares -->
     <Squares
-      client:load
+      client:idle
       direction="diagonal"
       speed={0.2}
       borderColor="#fafafa"
@@ -50,7 +54,7 @@ const noiseSvg = `data:image/svg+xml,${encodeURIComponent(`<svg viewBox="0 0 400
     <!-- Contenido -->
     <div class="relative z-20 flex justify-between w-full px-16">
       <div class="flex flex-col gap-[15px] w-[800px]">
-        <h3 class="font-bold text-4xl">{profile[0].data.name}</h3>
+        <h3 class="font-bold text-4xl">{currentProfile.data.name}</h3>
 
         <h1 class="font-bold text-9xl tracking-[-2px] leading-[125px]">
           <span class="text-primary">Front</span><span>end</span>
@@ -59,24 +63,21 @@ const noiseSvg = `data:image/svg+xml,${encodeURIComponent(`<svg viewBox="0 0 400
         </h1>
 
         <p class="text-2xl">
-          {profile[0].body}
+          {currentProfile.body}
         </p>
 
         <LocationBadge
-          client:load
-          country={profile[0].data.country}
-          city={profile[0].data.city}
+          country={currentProfile.data.country}
+          city={currentProfile.data.city}
         />
       </div>
 
-      <img
-        src={profile[0].data.avatar}
-        alt={profile[0].data.name}
-        class="h-[400px]"
-      />
+      <div class="h-[400px] w-[400px] rounded-full bg-secondary text-primary grid place-items-center text-8xl font-black">
+        {initials}
+      </div>
 
       <div class="flex flex-col justify-end">
-        <SocialButtons client:load social={profile[0].data.social} />
+        <SocialButtons social={currentProfile.data.social} />
       </div>
     </div>
   </div>

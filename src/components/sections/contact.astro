@@ -1,6 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import ContactForm from "../contact-form.tsx";
-import DownloadCVButton from "../download-cv-button.tsx";
+
+const [profile] = await getCollection("profile");
 ---
 
 <div
@@ -66,11 +68,11 @@ import DownloadCVButton from "../download-cv-button.tsx";
     <div class="grid md:grid-cols-2">
       <div class="flex flex-col py-6 px-10 justify-between space-y-6">
         <div>
-          <button
+          <span
             class="px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-text mb-6"
           >
             Contact
-          </button>
+          </span>
           <h2 class="text-4xl md:text-5xl font-bold mb-4 text-text">
             ¿Tenés una oportunidad o proyecto en mente?
           </h2>
@@ -79,11 +81,10 @@ import DownloadCVButton from "../download-cv-button.tsx";
             la brevedad.
           </p>
         </div>
-        <DownloadCVButton client:load />
       </div>
       <div class="rounded-2xl p-6 md:p-8 border border-gray-200 bg-background">
         <h3 class="text-2xl font-bold mb-6 text-text">Contactar</h3>
-        <ContactForm client:load />
+        <ContactForm email={profile.data.email} />
       </div>
     </div>
   </div>

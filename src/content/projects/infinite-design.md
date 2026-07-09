@@ -1,6 +1,5 @@
 ---
 title: "Infinite Design"
-image: "/projects/infinite-design/preview.png"
 date: "2023-10-15"
 technologies: ["React", "TypeScript", "Storybook"]
 company: "Colppy"

@@ -2,7 +2,6 @@
 name: "Tobias Longstaff"
 role: "Frontend Development"
 email: "tobias@email.com"
-avatar: "./src/assets/images/avatar.png"
 country: "Argentina"
 city: "Buenos Aires"
 social:

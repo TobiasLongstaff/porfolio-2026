@@ -6,10 +6,9 @@ import ProjectsCarousel from './projects-carousel.tsx';
 interface ProjectsFilterProps {
   projects: CollectionEntry<"projects">[];
   companies: string[];
-  initialCompany: string;
 }
 
-export default function ProjectsFilter({ projects, companies, initialCompany }: ProjectsFilterProps) {
+export default function ProjectsFilter({ projects, companies }: ProjectsFilterProps) {
   const ALL_COMPANIES = "Todos";
   const [selectedCompany, setSelectedCompany] = useState<string>(ALL_COMPANIES);
   const previousCompanyRef = useRef<string>(ALL_COMPANIES);

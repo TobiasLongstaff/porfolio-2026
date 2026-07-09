@@ -1,6 +1,5 @@
 ---
 title: "Gestión de Pedidos y Reclamos Rebuild"
-image: "/projects/orders-management-rebuild/preview.png"
 date: "2023-10-15"
 technologies: ["React", "TypeScript", "Laravel", "My SQL"]
 company: "Indicum Technology"

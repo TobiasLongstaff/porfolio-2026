@@ -1,6 +1,5 @@
 ---
 title: "Comentarios de Sectores"
-image: "/projects/sector-comments/preview.png"
 date: "2023-10-15"
 technologies: ["JavaScript", "jQuery", "PHP", "My SQL"]
 company: "Indicum Technology"

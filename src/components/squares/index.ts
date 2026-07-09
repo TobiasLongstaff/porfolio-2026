@@ -1,1 +1,1 @@
-export * from './squares';  
+export * from './squares.jsx';

@@ -52,13 +52,9 @@ function ProjectCarouselItem({ project, index, itemWidth, trackItemOffset, x, tr
           })}
         </div>
       </div>
-      {project.data.image && (
-        <img
-          src={project.data.image}
-          alt={project.data.title}
-          className="w-[750px] h-[370px] object-cover flex-shrink-0"
-        />
-      )}
+      <div className="w-[750px] h-[370px] rounded-[32px] bg-secondary text-primary grid place-items-center flex-shrink-0 text-4xl font-bold text-center px-10">
+        {project.data.company}
+      </div>
     </motion.div>
   );
 }

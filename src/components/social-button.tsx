@@ -1,6 +1,4 @@
-import React from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import PrimaryButton from './primary-button';
 import type { IconType } from 'react-icons';
 
 interface SocialButtonProps {
@@ -17,14 +15,16 @@ const iconMap: Record<string, IconType> = {
 
 export default function SocialButton({ platform, url, label }: SocialButtonProps) {
   const Icon = iconMap[platform];
-  
-  const handleClick = () => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
 
   return (
-    <PrimaryButton onClick={handleClick} icon={Icon} iconPosition="left">
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold border border-gray-200 cursor-pointer shadow-sm w-fit bg-white/80 backdrop-blur-xl"
+    >
+      <Icon className="w-4 h-4" />
       {label}
-    </PrimaryButton>
+    </a>
   );
 }

@@ -1,6 +1,5 @@
 ---
 title: "X-Ray"
-image: "/projects/x-ray/preview.png"
 date: "2023-10-15"
 technologies: ["React", "TypeScript", "Laravel", "My SQL"]
 company: "Indicum Technology"

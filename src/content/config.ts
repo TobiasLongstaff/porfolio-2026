@@ -6,7 +6,6 @@ const profile = defineCollection({
     name: z.string(),
     role: z.string(),
     email: z.string().email(),
-    avatar: z.string(),
     country: z.string(),
     city: z.string(),
     social: z.object({
@@ -30,7 +29,6 @@ const projects = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    image: z.string(),
     date: z.string().refine((date) => !isNaN(Date.parse(date)), {
       message: 'Invalid date format',
     }),

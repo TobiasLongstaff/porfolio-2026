@@ -6,17 +6,15 @@ const projects = await getCollection("projects");
 
 // Obtener empresas únicas
 const companies = Array.from(new Set(projects.map(p => p.data.company)));
-const initialCompany = companies[0] || '';
 ---
 
-<div class="min-h-screen flex flex-col items-center justify-center">
+<div class="min-h-screen flex flex-col items-center justify-center bg-[linear-gradient(to_bottom,#efeefe_0%,#f7f6ff_24%,#fff_62%)]">
   <div class="w-full flex flex-col items-center justify-center gap-[25px]">
     <h2 class="text-6xl font-bold">Mis {`{dev}`} proyectos</h2>
     <ProjectsFilter 
-      client:load 
+      client:visible
       projects={projects} 
       companies={companies}
-      initialCompany={initialCompany}
     />
   </div>
 </div>

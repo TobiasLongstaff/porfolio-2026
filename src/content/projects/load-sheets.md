@@ -1,6 +1,5 @@
 ---
 title: "Load Sheets"
-image: "/projects/load-sheets/preview.png"
 date: "2023-10-15"
 technologies: ["React", "TypeScript", "Laravel", "My SQL"]
 company: "Indicum Technology"

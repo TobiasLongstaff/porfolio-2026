@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-import Hero from "../components/sections/hero.astro";
+import HeroTerminal from "../components/HeroTerminal.jsx";
 import Projects from "../components/sections/projects.astro";
 import Technologies from "../components/sections/technologies.astro";
 import ExperienceTitle from "../components/sections/experience-title.astro";
@@ -11,10 +10,10 @@ import Contact from "../components/sections/contact.astro";
 
 <Layout>
   <main class="relative overflow-x-hidden">
-    <section id="hero" data-spy>
-      <Hero />
+    <section id="hero" data-spy class="relative z-10">
+      <HeroTerminal client:load />
     </section>
-    <section id="projects" data-spy>
+    <section id="projects" data-spy class="relative z-0">
       <Projects />
     </section>
     <section id="experience-title" data-spy>
@@ -31,4 +30,3 @@ import Contact from "../components/sections/contact.astro";
     </section>
   </main>
 </Layout>
-

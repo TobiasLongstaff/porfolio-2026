@@ -1,6 +1,5 @@
 ---
 title: "Parcel Picker"
-image: "/projects/parcel-picker/preview.png"
 date: "2023-10-15"
 technologies: ["React", "PHP", "My SQL"]
 company: "Indicum Technology"

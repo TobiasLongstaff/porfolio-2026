@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import './Squares.css';
+import './squares.css';
 
 export const Squares = ({
   direction = 'right',
@@ -68,6 +68,11 @@ export const Squares = ({
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      drawGrid();
+      return () => window.removeEventListener('resize', resizeCanvas);
+    }
 
     const updateAnimation = () => {
       const effectiveSpeed = Math.max(speed, 0.1);

@@ -1,6 +1,5 @@
 ---
 title: "Gestión de Pedidos y Reclamos"
-image: "/projects/orders-management/preview.png"
 date: "2023-10-15"
 technologies: ["JavaScript", "jQuery", "PHP", "My SQL"]
 company: "Indicum Technology"
