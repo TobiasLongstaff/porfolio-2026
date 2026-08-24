@@ -53,7 +53,7 @@ export default function HeroTerminal() {
             .fromTo(
               terminalRef.current,
               { y: "22vh", scale: 0.78 },
-              { y: "-30vh", scale: 0.96, ease: "none" },
+              { y: "-12vh", scale: 0.96, ease: "none" },
               0,
             );
         },

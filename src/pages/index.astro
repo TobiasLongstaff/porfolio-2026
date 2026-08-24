@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroTerminal from "../components/HeroTerminal.jsx";
+import HeroProjectsReveal from "../components/hero-projects-reveal";
 import Projects from "../components/sections/projects.astro";
 import Technologies from "../components/sections/technologies.astro";
 import ExperienceTitle from "../components/sections/experience-title.astro";
@@ -13,6 +14,7 @@ import Contact from "../components/sections/contact.astro";
     <section id="hero" data-spy class="relative z-10">
       <HeroTerminal client:load />
     </section>
+    <HeroProjectsReveal client:visible={{ rootMargin: "300px" }} />
     <section id="projects" data-spy class="relative z-0">
       <Projects />
     </section>

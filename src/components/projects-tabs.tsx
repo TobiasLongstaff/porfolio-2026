@@ -1,6 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
-
 interface ProjectsTabsProps {
   companies: string[];
   selectedCompany: string;
@@ -8,66 +5,30 @@ interface ProjectsTabsProps {
 }
 
 export default function ProjectsTabs({ companies, selectedCompany, onCompanyChange }: ProjectsTabsProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const selectedIndex = companies.indexOf(selectedCompany);
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
-
-  useEffect(() => {
-    buttonRefs.current = buttonRefs.current.slice(0, companies.length);
-  }, [companies.length]);
-
-  useEffect(() => {
-    const selectedButton = buttonRefs.current[selectedIndex];
-    if (selectedButton && containerRef.current) {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const buttonRect = selectedButton.getBoundingClientRect();
-      setIndicatorStyle({
-        left: buttonRect.left - containerRect.left,
-        width: buttonRect.width
-      });
-    }
-  }, [selectedIndex, selectedCompany]);
-
   return (
     <div 
-      ref={containerRef}
-      className="px-[10px] py-[12px] rounded-full shadow-soft bg-white flex gap-[10px] relative"
+      role="group"
+      aria-label="Filtrar proyectos por empresa"
+      className="max-w-[calc(100vw-2rem)] overflow-x-auto px-[10px] py-[12px] rounded-full shadow-soft bg-white flex gap-[10px]"
     >
-      {companies.map((company, index) => {
+      {companies.map((company) => {
         const isSelected = selectedCompany === company;
         return (
           <button
             key={company}
-            ref={(el) => { buttonRefs.current[index] = el; }}
+            type="button"
+            aria-pressed={isSelected}
             onClick={() => onCompanyChange(company)}
-            className={`relative h-[60px] px-[20px] font-medium text-2xl rounded-full transition-opacity z-10 ${
+            className={`h-[52px] sm:h-[60px] px-[20px] flex-shrink-0 font-medium text-lg sm:text-2xl rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
               isSelected
-                ? "text-primary opacity-100"
-                : "text-text-secondary opacity-60 hover:opacity-100"
+                ? "bg-secondary text-primary"
+                : "text-text-secondary hover:bg-secondary"
             }`}
           >
             {company}
           </button>
         );
       })}
-      <motion.div
-        className="absolute h-[60px] bg-secondary rounded-full z-0"
-        layoutId="activeTab"
-        initial={false}
-        animate={{
-          left: indicatorStyle.left,
-          width: indicatorStyle.width
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 30
-        }}
-        style={{
-          top: '12px'
-        }}
-      />
     </div>
   );
 }

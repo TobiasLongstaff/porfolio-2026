@@ -2,15 +2,17 @@
 import { getCollection } from "astro:content";
 import ProjectsFilter from "../projects-filter.tsx";
 
-const projects = await getCollection("projects");
+const projects = (await getCollection("projects")).sort((a, b) =>
+  b.data.date.localeCompare(a.data.date) || a.data.title.localeCompare(b.data.title)
+);
 
 // Obtener empresas únicas
 const companies = Array.from(new Set(projects.map(p => p.data.company)));
 ---
 
-<div class="min-h-screen flex flex-col items-center justify-center bg-[linear-gradient(to_bottom,#efeefe_0%,#f7f6ff_24%,#fff_62%)]">
+<div class="min-h-screen flex flex-col items-center justify-center py-16 bg-[linear-gradient(to_bottom,#efeefe_0%,#f7f6ff_24%,#fff_62%)]">
   <div class="w-full flex flex-col items-center justify-center gap-[25px]">
-    <h2 class="text-6xl font-bold">Mis {`{dev}`} proyectos</h2>
+    <h2 class="sr-only">Proyectos</h2>
     <ProjectsFilter 
       client:visible
       projects={projects} 

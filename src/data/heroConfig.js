@@ -1,7 +1,7 @@
 export const heroConfig = {
-  introLabel: "Portfolio / 2026",
+  introLabel: `Portfolio / ${new Date().getFullYear()}`,
   introTitle: "DevOps, desarrollo full-stack y liderazgo técnico.",
-  scrollHint: "Scroll para abrir la terminal",
+  scrollHint: "Scroll para ver más",
   windowTitle: "Tobias Longstaff — portfolio — 120x41",
   lastLogin: "Last login: Tue Jul 09 18:30:01 on ttys000",
   promptLine: "tobiaslongstaff@portfolio ~ % ./presentacion",
